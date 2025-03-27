@@ -5,7 +5,7 @@ const storeRouter = Router();
 storeRouter.get("/", storeController.storeListGet);
 storeRouter.get("/new", storeController.storeCreateGet);
 storeRouter.post("/new", storeController.storeCreateItem);
-storeRouter.get("/:id/category", storeController.storeCreateGet);
-storeRouter.get("/:id/item", storeController.storeCreateGet);
+storeRouter.get("/category", storeController.storeSearchCategoryGet);
+storeRouter.get("/:id/details", storeController.storeSearchGet);
 
 module.exports = storeRouter;

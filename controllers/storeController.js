@@ -20,8 +20,28 @@ async function storeCreateItem(req, res) {
     res.redirect("/");
 }
 
+async function storeSearchCategoryGet(req, res) {
+  const category = await db.searchCategory(req.query.category);
+  res.render("viewCategory", 
+    {
+      title: "Search Category",
+      inventory:category
+    });
+}
+
+async function storeSearchGet(req, res) {
+  const item = await db.searchMessages(req.params.id);
+  res.render("viewItem", 
+    {
+        title: "View Item",
+        item: item[0]
+    });
+}
+
 module.exports = {
   storeListGet,
   storeCreateGet,
-  storeCreateItem
+  storeCreateItem,
+  storeSearchCategoryGet,
+  storeSearchGet
 };

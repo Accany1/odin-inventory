@@ -8,13 +8,13 @@
     <% inventory.forEach(function(entry) { %>
     <div>
         <div>Trainer: <%= entry.name %></div>
-        <div>Pokemon: <%= entry.pokename %>, Category: <%= entry.category %></div>
+        <div>Pokemon: <%= entry.pokename %>, Category: <%= entry.category %> <a href="/<%= entry.id %>/details">Details</a></div>
     </div>
     <% }); %>
     <h1>Search</h1>
-  <form action="/search" method="GET">
-    <label for="username">Search Name: </label>
-    <input type="text" name="username" id="username">
+  <form action="/category" method="GET">
+    <label for="category">Search Category: </label>
+    <input type="text" name="category" id="category">
     <button type="submit">Submit</button>
   </form>
 </body>
