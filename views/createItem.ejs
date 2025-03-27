@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+  </head>
+<body>
+  <h1><%= title %></h1>
+  <form action="/new" method="POST">
+    <label for="name">Name: </label>
+    <input type="text" name="name" id="name" required>
+    <label for="pokename">Pokemon: </label>
+    <input type="text" name="pokename" id="pokename" required>
+    <label for="category">Category: </label>
+    <input type="text" name="category" id="category" required>
+    <button type="submit">Submit</button>
+  </form>
+  <a href="/">Back to home</a>
+</body>
+</html>
