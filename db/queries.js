@@ -14,14 +14,19 @@ async function searchCategory(category) {
   return rows;
 }
 
-async function searchMessages(id) {
+async function searchItem(id) {
   const { rows } = await pool.query("SELECT * FROM inventory WHERE (id) = ($1)", [id]);
   return rows;
+}
+
+async function deleteItem(id) {
+  await pool.query("DELETE FROM inventory WHERE (id) = ($1)", [id]);
 }
 
 module.exports = {
     getAllItems,
     insertItem,
     searchCategory,
-    searchMessages
+    searchItem,
+    deleteItem
   };

@@ -8,7 +8,9 @@
     <% inventory.forEach(function(entry) { %>
     <div>
         <div>Trainer: <%= entry.name %></div>
-        <div>Pokemon: <%= entry.pokename %>, Category: <%= entry.category %> <a href="/<%= entry.id %>/details">Details</a></div>
+        <div>Pokemon: <%= entry.pokename %>, Category: <%= entry.category %></div>
+        <div><a href="/<%= entry.id %>/details">Details</a></div>
+        <div><a href="/<%= entry.id %>/delete">Delete</a></div>
     </div>
     <% }); %>
     <h1>Search</h1>

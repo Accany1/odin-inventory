@@ -7,5 +7,7 @@ storeRouter.get("/new", storeController.storeCreateGet);
 storeRouter.post("/new", storeController.storeCreateItem);
 storeRouter.get("/category", storeController.storeSearchCategoryGet);
 storeRouter.get("/:id/details", storeController.storeSearchGet);
+storeRouter.get("/:id/delete", storeController.storeDeleteGet);
+
 
 module.exports = storeRouter;

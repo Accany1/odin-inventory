@@ -30,7 +30,7 @@ async function storeSearchCategoryGet(req, res) {
 }
 
 async function storeSearchGet(req, res) {
-  const item = await db.searchMessages(req.params.id);
+  const item = await db.searchItem(req.params.id);
   res.render("viewItem", 
     {
         title: "View Item",
@@ -38,10 +38,16 @@ async function storeSearchGet(req, res) {
     });
 }
 
+async function storeDeleteGet(req, res) {
+  await db.deleteItem(req.params.id);
+  res.redirect("/");
+}
+
 module.exports = {
   storeListGet,
   storeCreateGet,
   storeCreateItem,
   storeSearchCategoryGet,
-  storeSearchGet
+  storeSearchGet,
+  storeDeleteGet
 };
